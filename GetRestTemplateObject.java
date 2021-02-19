@@ -7,20 +7,6 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class GetRestTemplateObject {
-
-	@Value("${app.getmfgid}")
-	public String mfgIdAPI;
-	
-	@Value("${crp.refresh.api}")
-	public String refreshApi;
-	
-	public  String createMfgURL(String clientName) {
-		return mfgIdAPI+"?name="+clientName;
-	}
-	
-	public  String createRefreshURL(String clientName) {
-		return refreshApi+"&tid="+clientName;
-	}
 	
 	@Bean
 	public RestTemplate restTemplate() {
